@@ -10,6 +10,7 @@
 		6C154C5D1B46C93800ADDB9E /* LaneAssist.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C154C5C1B46C93800ADDB9E /* LaneAssist.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C154C631B46C93800ADDB9E /* LaneAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C154C571B46C93800ADDB9E /* LaneAssist.framework */; };
 		6C154C6A1B46C93800ADDB9E /* LaneAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C154C691B46C93800ADDB9E /* LaneAssistTests.swift */; };
+		6C154C741B46C96500ADDB9E /* LaneAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C154C731B46C96500ADDB9E /* LaneAssist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		6C154C621B46C93800ADDB9E /* LaneAssistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaneAssistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C154C681B46C93800ADDB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C154C691B46C93800ADDB9E /* LaneAssistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneAssistTests.swift; sourceTree = "<group>"; };
+		6C154C731B46C96500ADDB9E /* LaneAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaneAssist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				6C154C5C1B46C93800ADDB9E /* LaneAssist.h */,
+				6C154C731B46C96500ADDB9E /* LaneAssist.swift */,
 				6C154C5A1B46C93800ADDB9E /* Supporting Files */,
 			);
 			path = LaneAssist;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C154C741B46C96500ADDB9E /* LaneAssist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 		6C154C6E1B46C93800ADDB9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +337,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		6C154C6F1B46C93800ADDB9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

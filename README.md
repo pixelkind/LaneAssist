@@ -16,9 +16,15 @@ view.LA.top().addToSuperview()
 
 With Lane Assist you can! Just add Lane Assist to your project and you're done. Lane Assist is not a DSL on top of AutoLayout that you have to learn, instead it just creates basic NSLayoutConstraints with some easy function calls. Method chaining makes it even more comfortable to use.
 
-## Usage
+## Installation
 
-## Available methods
+You can copy and add the `LaneAssist/LaneAssist.swift` file manually to your project to use it. If your project is targeting iOS 7, this is the only possible way.
+
+### Cocoapods
+
+Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher.
+
+## Usage
 
 ### Standard Layout methods
 

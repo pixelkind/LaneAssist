@@ -151,16 +151,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func width(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func width(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Width, relatedBy: relation, toItem: view, attribute: .Width, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Width
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Width, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -168,16 +172,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func height(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func height(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Height, relatedBy: relation, toItem: view, attribute: .Height, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Height
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Height, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -185,16 +193,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func top(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func top(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Top, relatedBy: relation, toItem: view, attribute: .Top, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Top
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Top, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -202,16 +214,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func bottom(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func bottom(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: relation, toItem: view, attribute: .Bottom, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Bottom
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -219,16 +235,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func left(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func left(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Left, relatedBy: relation, toItem: view, attribute: .Left, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Left
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Left, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -236,16 +256,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func right(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func right(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .Right, relatedBy: relation, toItem: view, attribute: .Right, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .Right
+        }
+        return LALayoutConstraint(item: self.view, attribute: .Right, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -253,16 +277,20 @@ public class LAObject {
     
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
     
         :returns: The layout constraint.
     */
-    public func centerX(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func centerX(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: relation, toItem: view, attribute: .CenterX, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .CenterX
+        }
+        return LALayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
     
     /**
@@ -270,16 +298,20 @@ public class LAObject {
         
         :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
         :param: view The second view participating in the constraint. If not set, the superview of the first view will be used instead.
+        :param: attribute The attribute of the second view participating in the constraint. If not set, the `firstAttribute` will be used for the second aswell.
         :param: multiplier The multiplier applied to the second attribute participating in the constraint. The default value is 1.
         :param: relation The relation between the two attributes in the constraint. The default is `.Equal`.
         
         :returns: The layout constraint.
     */
-    public func centerY(constant: CGFloat = 0, var view: UIView? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
+    public func centerY(constant: CGFloat = 0, var view: UIView? = nil, var attribute: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> LALayoutConstraint {
         if view == nil {
             view = self.view.superview!
         }
-        return LALayoutConstraint(item: self.view, attribute: .CenterY, relatedBy: relation, toItem: view, attribute: .CenterY, multiplier: multiplier, constant: constant)
+        if attribute == nil {
+            attribute = .CenterY
+        }
+        return LALayoutConstraint(item: self.view, attribute: .CenterY, relatedBy: relation, toItem: view, attribute: attribute!, multiplier: multiplier, constant: constant)
     }
 }
 

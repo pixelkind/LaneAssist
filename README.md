@@ -11,7 +11,7 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal,
 Wouldn't it be nice to write something more swift-like and readable? Like this:
 
 ```swift
-view.LA.top().addToSuperview()
+view.LA.setTop.addToSuperview()
 ```
 
 With Lane Assist you can! Just add Lane Assist to your project and you're done. Lane Assist is not a DSL on top of AutoLayout that you have to learn, instead it just creates basic NSLayoutConstraints with some easy function calls. Method chaining makes it even more comfortable to use.
@@ -20,59 +20,34 @@ With Lane Assist you can! Just add Lane Assist to your project and you're done. 
 
 You can copy and add the `LaneAssist/LaneAssist.swift` file manually to your project to use it. If your project is targeting iOS 7, this is the only possible way.
 
-### Cocoapods
+### Cocoapods (Only for Version 1.0 currently, update soon)
 
 Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher.
 
 ## Usage
 
-### Standard Layout methods
+### Standard Layout variables
 
-* `width()`
-* `height()`
-* `top()`
-* `bottom()`
-* `left()`
-* `right()`
-* `centerX()`
-* `centerY()`
- 
-Here you have the following optional parameters with their default values:
+* `setWidth`
+* `setHeight`
+* `setTop`
+* `setBottom`
+* `setLeft`
+* `setRight`
+* `setCenterX`
+* `setCenterY`
 
-* `constant: CGFloat = 0`
-* `view: UIView? = nil`
-* `multiplier: CGFloat = 1`
-* `relation: NSLayoutRelation = .Equal`
- 
-> ⚠️ If you leave out the view, Lane Assist will automatically use the superview of your view as second View-Item. So make sure you have added your view to the view-hierarchy before using the Lane Assist methods.
+### Method to set the constant of a constraint
 
-### Methods to create fixed Layout Attributes
+* `withConstant(constant: CGFloat)`
 
-These methods create an NSLayoutConstraint with the second view set to `nil` and the second attribute set to `.NotAnAttribute`.
+### Other Methods
 
-* `fixedWidth()`
-* `fixedHeight()`
+* `ofView(view: UIView)`
+* `withMultiplier(multiplier: CGFloat)`
+* `setFixed(constant: CGFloat)`
 
-Here you have the following optional parameters with their default values:
-
-* `constant: CGFloat = 0`
-* `multiplier: CGFloat = 1`
-* `relation: NSLayoutRelation = .Equal`
-
-
-### Method to create custom constraints
-
-* `constraint(firstAttribute: NSLayoutAttribute)`
-
-The first parameter is non-optional and the following optional parameters with their default values are:
-
-* `view: UIView? = nil`
-* `secondAttribute: NSLayoutAttribute? = nil`
-* `constant: CGFloat = 0`
-* `multiplier: CGFloat = 1`
-* `relation: NSLayoutRelation = .Equal`
-
-If you leave out the second attribute, the method will just use the first attribute as the second.
+### Methods to declare your LayoutConstraint (coming soon)
 
 ### Methods to add a constraint to a view
 
@@ -81,7 +56,7 @@ If you leave out the second attribute, the method will just use the first attrib
  
 ### Method to set the priority of a constraint
 
-* `priority(priority: UILayoutPriority)`
+* `withPriority(priority: UILayoutPriority)`
 
 ## More examples
 
@@ -97,16 +72,16 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equ
 The same code using Lane Assist:
 
 ```swift
-view.LA.centerX().addToSuperview()
-view.LA.top(constant: 100).addToSuperview()
-view.LA.width().addToSuperview()
-view.LA.constraint(firstAttribute: .Height, view: view, secondAttribute: .Width).addToSuperview()
+view.LA.setCenterX.addToSuperview()
+view.LA.setTop.withConstant(100).addToSuperview()
+view.LA.setWidth.addToSuperview()
+view.LA.setHeight.toWidth().ofView(view).addToSuperview()
 ```
 
 To hold on to a constraint (for example if you want to animate it), just assign it to a variable. Let's say we want to animate the top-constraint:
 
 ```swift
-let topConstraint = view.LA.top(constant: 100).addToSuperview()
+let topConstraint = view.LA.setTop.withConstant(100).addToSuperview()
 
 UIView.animateWithDuration(2, animations: { () -> Void in
     self.topConstraint.constant = 200
@@ -116,4 +91,4 @@ UIView.animateWithDuration(2, animations: { () -> Void in
 
 > ⚠️ Per default Lane Assists calls `setTranslatesAutoresizingMaskIntoConstraints(false)` on your view, if used.
 
-Lane Assist is currently used in a real world Project by me. If you end up using Lane Assist in your projects too, I'd happy to hear your thoughts and ideas. You can reach me through [Twitter](https://twitter.com/pixelkindcom).
+Lane Assist is currently used in real world Projects by me. If you end up using Lane Assist in your projects too, I'd happy to hear your thoughts and ideas. You can reach me through [Twitter](https://twitter.com/pixelkindcom).

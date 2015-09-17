@@ -274,7 +274,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     
     :returns: The layout constraint.
     */
-    public func constant(constant: CGFloat) -> LALayoutConstraint {
+    public func withConstant(constant: CGFloat) -> LALayoutConstraint {
         self.constant = constant
         return self
     }
@@ -286,7 +286,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     
     :returns: The layout constraint.
     */
-    public func multiplier(multiplier: CGFloat) -> LALayoutConstraint {
+    public func withMultiplier(multiplier: CGFloat) -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: multiplier, constant: self.constant)
     }
     
@@ -326,7 +326,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
         :returns: The layout constraint.
     */
     
-    public func priority(priority: UILayoutPriority) -> LALayoutConstraint {
+    public func withPriority(priority: UILayoutPriority) -> LALayoutConstraint {
         self.priority = priority
         return self
     }

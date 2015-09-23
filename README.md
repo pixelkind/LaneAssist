@@ -11,7 +11,7 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal,
 Wouldn't it be nice to write something more swift-like and readable? Like this:
 
 ```swift
-view.LA.setTop.addToSuperview()
+view.LA.setTop?.addToSuperview()
 ```
 
 With Lane Assist you can! Just add Lane Assist to your project and you're done. Lane Assist is not a DSL on top of AutoLayout that you have to learn, instead it just creates basic NSLayoutConstraints with some easy function calls. Method chaining makes it even more comfortable to use.
@@ -20,9 +20,9 @@ With Lane Assist you can! Just add Lane Assist to your project and you're done. 
 
 You can copy and add the `LaneAssist/LaneAssist.swift` file manually to your project to use it. If your project is targeting iOS 7, this is the only possible way.
 
-### Cocoapods (Only for Version 1.0 currently, update soon)
+### Cocoapods
 
-Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher.
+Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher. If you want to use version 1 of Lane Assist please add //TODO: Version 1 Code from Cocoapods
 
 ## Usage
 
@@ -36,27 +36,56 @@ Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` a
 * `setRight`
 * `setCenterX`
 * `setCenterY`
+* `setBaseline`
+ 
+These variables are optionals. If you haven't added your view to the view hierarchy it will return nil!
 
-### Method to set the constant of a constraint
+### Relation Methods
 
-* `withConstant(constant: CGFloat)`
+* `equalTo()`
+* `greaterThanOrEqual()`
+* `lessThanOrEqual()`
+
+### Attribute Methods
+
+* `toBaseline()`
+* `toLeft()`
+* `toRight()`
+* `toTop()`
+* `toBottom()`
+* `toCenterX()`
+* `toCenterY()`
+* `toWidth()`
+* `toHeight()`
+* `toBaseline()`
+* `toCenterXWithinMargins()`
+* `toCenterYWithinMargins()`
+* `toFirstBaseline()`
+* `toLeading()`
+* `toLeadingMargin()`
+* `toLeftMargin()`
+* `toRightMargin()`
+* `toTopMargin()`
+* `toBottomMargin()`
+* `toTrailing()`
+* `toTrailingMargin()`
 
 ### Other Methods
 
 * `ofView(view: UIView)`
 * `withMultiplier(multiplier: CGFloat)`
+* `withConstant(constant: CGFloat)`
 * `setFixed(constant: CGFloat)`
-
-### Methods to declare your LayoutConstraint (coming soon)
+* `withPriority(priority: UILayoutPriority)`
 
 ### Methods to add a constraint to a view
 
 * `addToSuperview()`
 * `addToView(view: UIView)`
  
-### Method to set the priority of a constraint
+### How it works
 
-* `withPriority(priority: UILayoutPriority)`
+You can easily chain all the properties after each other. First you start with a view and geht the Lane Assist Object `view.LA`, this will set your views `setTranslatesAutoresizingMaskIntoConstraints` to false. Then you choose your initial value to set, for example top `view.LA.setTop` and now you can easily chain all the methods that are available, for example `view.LA.setTop?.toBottom().ofView(otherView).withConstant(10).withProperty(42).addToSuperview()`.
 
 ## More examples
 
@@ -72,19 +101,20 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equ
 The same code using Lane Assist:
 
 ```swift
-view.LA.setCenterX.addToSuperview()
-view.LA.setTop.withConstant(100).addToSuperview()
-view.LA.setWidth.addToSuperview()
-view.LA.setHeight.toWidth().ofView(view).addToSuperview()
+view.LA.setCenterX?.addToSuperview()
+view.LA.setTop?.withConstant(100).addToSuperview()
+view.LA.setWidth?.addToSuperview()
+view.LA.setHeight?.toWidth().ofView(view).addToSuperview()
 ```
 
 To hold on to a constraint (for example if you want to animate it), just assign it to a variable. Let's say we want to animate the top-constraint:
 
 ```swift
-let topConstraint = view.LA.setTop.withConstant(100).addToSuperview()
+let topConstraint = view.LA.setTop?.withConstant(100).addToSuperview()
+self.layoutIfNeeded()
 
 UIView.animateWithDuration(2, animations: { () -> Void in
-    self.topConstraint.constant = 200
+    self.topConstraint?.constant = 200
     self.layoutIfNeeded()
 })
 ```

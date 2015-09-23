@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LaneAssist"
-  s.version      = "1.1.0"
+  s.version      = "2.0.0"
   s.summary      = "An Assistant for AutoLayout in Swift."
 
   s.description  = <<-DESC
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/pixelkind/LaneAssist.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/pixelkind/LaneAssist.git", :tag => "2.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

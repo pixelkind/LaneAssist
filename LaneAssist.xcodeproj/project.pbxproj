@@ -161,6 +161,8 @@
 		6C154C4E1B46C93800ADDB9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Garrit Schaap";
 				TargetAttributes = {
@@ -406,6 +408,7 @@
 				6C154C6F1B46C93800ADDB9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C154C701B46C93800ADDB9E /* Build configuration list for PBXNativeTarget "LaneAssistTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +417,7 @@
 				6C154C721B46C93800ADDB9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

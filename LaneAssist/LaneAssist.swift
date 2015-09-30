@@ -41,7 +41,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the relation of the LayoutConstraint to `.Equal`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func equalTo() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: .Equal, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: self.multiplier, constant: self.constant)
@@ -50,7 +50,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the relation of the LayoutConstraint to `.GreaterThanOrEqual`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func greaterThanOrEqual() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: .GreaterThanOrEqual, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: self.multiplier, constant: self.constant)
@@ -59,7 +59,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the relation of the LayoutConstraint to `.LessThanOrEqual`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func lessThanOrEqual() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: .LessThanOrEqual, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: self.multiplier, constant: self.constant)
@@ -68,7 +68,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Width`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toWidth() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Width, multiplier: self.multiplier, constant: self.constant)
@@ -77,7 +77,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Height`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toHeight() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Height, multiplier: self.multiplier, constant: self.constant)
@@ -86,7 +86,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Left`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toLeft() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Left, multiplier: self.multiplier, constant: self.constant)
@@ -95,7 +95,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Right`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toRight() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Right, multiplier: self.multiplier, constant: self.constant)
@@ -104,7 +104,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Top`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toTop() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Top, multiplier: self.multiplier, constant: self.constant)
@@ -113,7 +113,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Bottom`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toBottom() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Bottom, multiplier: self.multiplier, constant: self.constant)
@@ -122,7 +122,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.BottomMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toBottomMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .BottomMargin, multiplier: self.multiplier, constant: self.constant)
@@ -131,7 +131,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Baseline`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toBaseline() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Baseline, multiplier: self.multiplier, constant: self.constant)
@@ -140,7 +140,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.CenterX`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toCenterX() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .CenterX, multiplier: self.multiplier, constant: self.constant)
@@ -149,7 +149,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.CenterXWithinMargins`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toCenterXWithinMargins() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .CenterXWithinMargins, multiplier: self.multiplier, constant: self.constant)
@@ -158,7 +158,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.CenterY`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toCenterY() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .CenterY, multiplier: self.multiplier, constant: self.constant)
@@ -167,7 +167,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.CenterYWithinMargins`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toCenterYWithinMargins() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .CenterYWithinMargins, multiplier: self.multiplier, constant: self.constant)
@@ -176,7 +176,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.FirstBaseline`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toFirstBaseline() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .FirstBaseline, multiplier: self.multiplier, constant: self.constant)
@@ -185,7 +185,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Leading`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toLeading() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Leading, multiplier: self.multiplier, constant: self.constant)
@@ -194,7 +194,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.LeadingMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toLeadingMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .LeadingMargin, multiplier: self.multiplier, constant: self.constant)
@@ -203,7 +203,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.LeftMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toLeftMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .LeftMargin, multiplier: self.multiplier, constant: self.constant)
@@ -212,7 +212,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.RightMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toRightMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .RightMargin, multiplier: self.multiplier, constant: self.constant)
@@ -221,7 +221,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.TopMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toTopMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .TopMargin, multiplier: self.multiplier, constant: self.constant)
@@ -230,7 +230,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.Trailing`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toTrailing() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .Trailing, multiplier: self.multiplier, constant: self.constant)
@@ -239,7 +239,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the second attribute of the LayoutConstraint to `.TrailingMargin`.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func toTrailingMargin() -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: .TrailingMargin, multiplier: self.multiplier, constant: self.constant)
@@ -248,9 +248,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the layout constraint to a fixed Value. The second attribute is set to `.NotAnAttribute` and the second item is set to `nil`.
     
-    :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
+    - parameter constant: The constant added to the multiplied second attribute participating in the constraint. The default is 0.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func setFixed(constant: CGFloat) -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: nil, attribute: .NotAnAttribute, multiplier: self.multiplier, constant: constant)
@@ -259,9 +259,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the secondItem to a view.
     
-    :param: view The secondItem View.
+    - parameter view: The secondItem View.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func ofView(view: UIView) -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: view, attribute: self.secondAttribute, multiplier: self.multiplier, constant: self.constant)
@@ -270,9 +270,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the constant to a different Value.
     
-    :param: constant The constant added to the multiplied second attribute participating in the constraint. The default is 0.
+    - parameter constant: The constant added to the multiplied second attribute participating in the constraint. The default is 0.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func withConstant(constant: CGFloat) -> LALayoutConstraint {
         self.constant = constant
@@ -282,9 +282,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
     Sets the multiplier to a different Value.
     
-    :param: multiplier The multiplier to multiplie the second attribute participating in the constraint. The default is 1.
+    - parameter multiplier: The multiplier to multiplie the second attribute participating in the constraint. The default is 1.
     
-    :returns: The layout constraint.
+    - returns: The layout constraint.
     */
     public func withMultiplier(multiplier: CGFloat) -> LALayoutConstraint {
         return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: multiplier, constant: self.constant)
@@ -293,7 +293,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
         Adds a layout constraint to the `superview` of it's `firstItem`.
     
-        :returns: The layout constraint.
+        - returns: The layout constraint.
     */
     
     public func addToSuperview() -> LALayoutConstraint {
@@ -308,9 +308,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
         Adds a layout constraint to the specified view.
         
-        :param: view The view to add the layoutConstraint to.
+        - parameter view: The view to add the layoutConstraint to.
         
-        :returns: The layout constraint.
+        - returns: The layout constraint.
     */
     
     public func addToView(view: UIView) -> LALayoutConstraint {
@@ -321,9 +321,9 @@ public class LALayoutConstraint: NSLayoutConstraint {
     /**
         Sets the priority of the layout constraint.
     
-        :param: priority The layout priority.
+        - parameter priority: The layout priority.
     
-        :returns: The layout constraint.
+        - returns: The layout constraint.
     */
     
     public func withPriority(priority: UILayoutPriority) -> LALayoutConstraint {
@@ -341,19 +341,19 @@ public class LAObject {
     /**
         Creates the Lane Assist Object.
         
-        :param: view The view of the Lane Assist Object.
+        - parameter view: The view of the Lane Assist Object.
         
-        :returns: The Lane Assist Object.
+        - returns: The Lane Assist Object.
     */
     init(view: UIView) {
         self.view = view
-        self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.translatesAutoresizingMaskIntoConstraints = false
     }
     
     /**
     Creates a layout constraint with `.Left` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setLeft: LALayoutConstraint? {
         get {
@@ -368,7 +368,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Right` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setRight: LALayoutConstraint? {
         get {
@@ -383,7 +383,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Top` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setTop: LALayoutConstraint? {
         get {
@@ -398,7 +398,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Bottom` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setBottom: LALayoutConstraint? {
         get {
@@ -413,7 +413,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Width` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setWidth: LALayoutConstraint? {
         get {
@@ -428,7 +428,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Height` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setHeight: LALayoutConstraint? {
         get {
@@ -443,7 +443,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.CenterX` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setCenterX: LALayoutConstraint? {
         get {
@@ -458,7 +458,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.CenterY` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setCenterY: LALayoutConstraint? {
         get {
@@ -473,7 +473,7 @@ public class LAObject {
     /**
     Creates a layout constraint with `.Baseline` as first and second attribute and the view as firstItem and the superview, if available, as secondItem.
     
-    :returns: A layout constraint.
+    - returns: A layout constraint.
     */
     public var setBaseline: LALayoutConstraint? {
         get {
@@ -494,7 +494,7 @@ public extension UIView {
     /**
         The Lane Assist property to create layout constraints.
     
-        :returns: The Lane Asset Object.
+        - returns: The Lane Asset Object.
     */
     public var LA: LAObject {
         get {

@@ -20,9 +20,9 @@ With Lane Assist you can! Just add Lane Assist to your project and you're done. 
 
 You can copy and add the `LaneAssist/LaneAssist.swift` file manually to your project to use it. If your project is targeting iOS 7, this is the only possible way.
 
-### Cocoapods
+### CocoaPods
 
-Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher. If you want to use version 1 of Lane Assist please add //TODO: Version 1 Code from Cocoapods
+Just add `pod 'LaneAssist'` to your Podfile. You need to set `use_frameworks!` and you have to target iOS 8 or higher. If you want to use version 1 of Lane Assist please add //TODO: Version 1 Code from CocoaPods
 
 ## Usage
 

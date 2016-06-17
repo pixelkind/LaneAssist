@@ -11,7 +11,7 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal,
 Wouldn't it be nice to write something more swift-like and readable? Like this:
 
 ```swift
-view.LA.setTop?.addToSuperview()
+view.LA.setTop.addToSuperview()
 ```
 
 With Lane Assist you can! Just add Lane Assist to your project and you're done. Lane Assist is not a DSL on top of AutoLayout that you have to learn, instead it just creates basic NSLayoutConstraints with some easy function calls. Method chaining makes it even more comfortable to use.
@@ -73,6 +73,7 @@ These variables are optionals. If you haven't added your view to the view hierar
 ### Other Methods
 
 * `ofView(view: UIView)`
+* `ofSelf()`
 * `withMultiplier(multiplier: CGFloat)`
 * `withConstant(constant: CGFloat)`
 * `setFixed(constant: CGFloat)`
@@ -82,10 +83,11 @@ These variables are optionals. If you haven't added your view to the view hierar
 
 * `addToSuperview()`
 * `addToView(view: UIView)`
+* `addToSelf()`
  
 ### How it works
 
-You can easily chain all the properties after each other. First you start with a view and geht the Lane Assist Object `view.LA`, this will set your views `setTranslatesAutoresizingMaskIntoConstraints` to false. Then you choose your initial value to set, for example top `view.LA.setTop` and now you can easily chain all the methods that are available, for example `view.LA.setTop?.toBottom().ofView(otherView).withConstant(10).withProperty(42).addToSuperview()`.
+You can easily chain all the properties after each other. First you start with a view and geht the Lane Assist Object `view.LA`, this will set your views `translatesAutoresizingMaskIntoConstraints` to false. Then you choose your initial value to set, for example top `view.LA.setTop` and now you can easily chain all the methods that are available, for example `view.LA.setTop.toBottom().ofView(otherView).withConstant(10).withPriority(42).addToSuperview()`.
 
 ## More examples
 
@@ -101,24 +103,24 @@ addConstraint(NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equ
 The same code using Lane Assist:
 
 ```swift
-view.LA.setCenterX?.addToSuperview()
-view.LA.setTop?.withConstant(100).addToSuperview()
-view.LA.setWidth?.addToSuperview()
-view.LA.setHeight?.toWidth().ofView(view).addToSuperview()
+view.LA.setCenterX.addToSuperview()
+view.LA.setTop.withConstant(100).addToSuperview()
+view.LA.setWidth.addToSuperview()
+view.LA.setHeight.toWidth().ofSelf().addToSuperview()
 ```
 
 To hold on to a constraint (for example if you want to animate it), just assign it to a variable. Let's say we want to animate the top-constraint:
 
 ```swift
-let topConstraint = view.LA.setTop?.withConstant(100).addToSuperview()
+let topConstraint = view.LA.setTop.withConstant(100).addToSuperview()
 self.layoutIfNeeded()
 
 UIView.animateWithDuration(2, animations: { () -> Void in
-    self.topConstraint?.constant = 200
+    self.topConstraint.constant = 200
     self.layoutIfNeeded()
 })
 ```
 
-> ⚠️ Per default Lane Assists calls `setTranslatesAutoresizingMaskIntoConstraints(false)` on your view, if used.
+> ⚠️ Per default Lane Assists calls `translatesAutoresizingMaskIntoConstraints(false)` on your view, if used.
 
 Lane Assist is currently used in real world Projects by me. If you end up using Lane Assist in your projects too, I'd happy to hear your thoughts and ideas. You can reach me through [Twitter](https://twitter.com/pixelkindcom).

@@ -268,6 +268,15 @@ public class LALayoutConstraint: NSLayoutConstraint {
     }
     
     /**
+     Sets the secondItem to the firstItem.
+     
+     - returns: The layout constraint.
+     */
+    public func ofSelf() -> LALayoutConstraint {
+        return LALayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.firstItem, attribute: self.secondAttribute, multiplier: self.multiplier, constant: self.constant)
+    }
+    
+    /**
     Sets the constant to a different Value.
     
     - parameter constant: The constant added to the multiplied second attribute participating in the constraint. The default is 0.
@@ -291,7 +300,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
     }
     
     /**
-        Adds a layout constraint to the `superview` of it's `firstItem`.
+        Adds a layout constraint to the `superview` of its `firstItem`.
     
         - returns: The layout constraint.
     */
@@ -301,6 +310,19 @@ public class LALayoutConstraint: NSLayoutConstraint {
             if let superview = view.superview {
                 superview.addConstraint(self)
             }
+        }
+        return self
+    }
+    
+    /**
+     Adds a layout constraint to its `firstItem`.
+     
+     - returns: The layout constraint.
+     */
+    
+    public func addToSelf() -> LALayoutConstraint {
+        if let view = firstItem as? UIView {
+            view.addConstraint(self)
         }
         return self
     }
@@ -355,13 +377,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setLeft: LALayoutConstraint? {
+    public var setLeft: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Left, relatedBy: .Equal, toItem: self.view.superview, attribute: .Left, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Left, relatedBy: .Equal, toItem: self.view.superview, attribute: .Left, multiplier: 1, constant: 0)
         }
     }
     
@@ -370,13 +388,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setRight: LALayoutConstraint? {
+    public var setRight: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Right, relatedBy: .Equal, toItem: self.view.superview, attribute: .Right, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Right, relatedBy: .Equal, toItem: self.view.superview, attribute: .Right, multiplier: 1, constant: 0)
         }
     }
     
@@ -385,13 +399,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setTop: LALayoutConstraint? {
+    public var setTop: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Top, relatedBy: .Equal, toItem: self.view.superview, attribute: .Top, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Top, relatedBy: .Equal, toItem: self.view.superview, attribute: .Top, multiplier: 1, constant: 0)
         }
     }
     
@@ -400,13 +410,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setBottom: LALayoutConstraint? {
+    public var setBottom: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.view.superview, attribute: .Bottom, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.view.superview, attribute: .Bottom, multiplier: 1, constant: 0)
         }
     }
     
@@ -415,13 +421,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setWidth: LALayoutConstraint? {
+    public var setWidth: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Width, relatedBy: .Equal, toItem: self.view.superview, attribute: .Width, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Width, relatedBy: .Equal, toItem: self.view.superview, attribute: .Width, multiplier: 1, constant: 0)
         }
     }
     
@@ -430,13 +432,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setHeight: LALayoutConstraint? {
+    public var setHeight: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Height, relatedBy: .Equal, toItem: self.view.superview, attribute: .Height, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Height, relatedBy: .Equal, toItem: self.view.superview, attribute: .Height, multiplier: 1, constant: 0)
         }
     }
     
@@ -445,13 +443,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setCenterX: LALayoutConstraint? {
+    public var setCenterX: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: .Equal, toItem: self.view.superview, attribute: .CenterX, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: .Equal, toItem: self.view.superview, attribute: .CenterX, multiplier: 1, constant: 0)
         }
     }
     
@@ -460,13 +454,9 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setCenterY: LALayoutConstraint? {
+    public var setCenterY: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .CenterY, relatedBy: .Equal, toItem: self.view.superview, attribute: .CenterY, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .CenterY, relatedBy: .Equal, toItem: self.view.superview, attribute: .CenterY, multiplier: 1, constant: 0)
         }
     }
     
@@ -475,14 +465,34 @@ public class LAObject {
     
     - returns: A layout constraint.
     */
-    public var setBaseline: LALayoutConstraint? {
+    public var setBaseline: LALayoutConstraint {
         get {
-            if self.view.superview != nil {
-                return LALayoutConstraint(item: self.view, attribute: .Baseline, relatedBy: .Equal, toItem: self.view.superview, attribute: .Baseline, multiplier: 1, constant: 0)
-            } else {
-                return nil
-            }
+            return LALayoutConstraint(item: self.view, attribute: .Baseline, relatedBy: .Equal, toItem: self.view.superview, attribute: .Baseline, multiplier: 1, constant: 0)
         }
+    }
+    
+    public func fillParent() -> (left: LALayoutConstraint, right: LALayoutConstraint, width: LALayoutConstraint, height: LALayoutConstraint) {
+        return (left: self.setLeft.addToSuperview(), right: self.setRight.addToSuperview(), width: self.setWidth.addToSuperview(), height: self.setHeight.addToSuperview())
+    }
+    
+    public func fillView(view: UIView) -> (left: LALayoutConstraint, right: LALayoutConstraint, width: LALayoutConstraint, height: LALayoutConstraint) {
+        return (left: self.setLeft.ofView(view).addToSuperview(), right: self.setRight.ofView(view).addToSuperview(), width: self.setWidth.ofView(view).addToSuperview(), height: self.setHeight.ofView(view).addToSuperview())
+    }
+    
+    public func sizeOfParent() -> (width: LALayoutConstraint, height: LALayoutConstraint) {
+        return (width: self.setWidth.addToSuperview(), height: self.setHeight.addToSuperview())
+    }
+    
+    public func sizeOfView(view: UIView) -> (width: LALayoutConstraint, height: LALayoutConstraint) {
+        return (width: self.setWidth.ofView(view).addToSuperview(), height: self.setHeight.ofView(view).addToSuperview())
+    }
+    
+    public func centerInParent() -> (centerX: LALayoutConstraint, centerY: LALayoutConstraint) {
+        return(centerX: self.setCenterX.addToSuperview(), centerY: self.setCenterY.addToSuperview())
+    }
+    
+    public func centerInView(view: UIView) -> (centerX: LALayoutConstraint, centerY: LALayoutConstraint) {
+        return(centerX: self.setCenterX.ofView(view).addToSuperview(), centerY: self.setCenterY.ofView(view).addToSuperview())
     }
 }
 

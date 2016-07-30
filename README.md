@@ -121,6 +121,6 @@ UIView.animateWithDuration(2, animations: { () -> Void in
 })
 ```
 
-> ⚠️ Per default Lane Assists calls `translatesAutoresizingMaskIntoConstraints(false)` on your view, if used.
+> ⚠️ Per default Lane Assists sets `translatesAutoresizingMaskIntoConstraints` to `false` on your view, if used.
 
 Lane Assist is currently used in real world Projects by me. If you end up using Lane Assist in your projects too, I'd happy to hear your thoughts and ideas. You can reach me through [Twitter](https://twitter.com/pixelkindcom).

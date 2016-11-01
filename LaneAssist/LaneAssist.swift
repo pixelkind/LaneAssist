@@ -305,6 +305,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
         - returns: The layout constraint.
     */
     
+    @discardableResult
     public func addToSuperview() -> LALayoutConstraint {
         if let view = firstItem as? UIView {
             if let superview = view.superview {
@@ -320,6 +321,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
      - returns: The layout constraint.
      */
     
+    @discardableResult
     public func addToSelf() -> LALayoutConstraint {
         if let view = firstItem as? UIView {
             view.addConstraint(self)
@@ -335,6 +337,7 @@ public class LALayoutConstraint: NSLayoutConstraint {
         - returns: The layout constraint.
     */
     
+    @discardableResult
     public func addToView(_ view: UIView) -> LALayoutConstraint {
         view.addConstraint(self)
         return self
@@ -471,26 +474,32 @@ public class LAObject {
         }
     }
     
+    @discardableResult
     public func fillParent() -> (left: LALayoutConstraint, right: LALayoutConstraint, width: LALayoutConstraint, height: LALayoutConstraint) {
         return (left: self.setLeft.addToSuperview(), right: self.setRight.addToSuperview(), width: self.setWidth.addToSuperview(), height: self.setHeight.addToSuperview())
     }
     
+    @discardableResult
     public func fillView(_ view: UIView) -> (left: LALayoutConstraint, right: LALayoutConstraint, width: LALayoutConstraint, height: LALayoutConstraint) {
         return (left: self.setLeft.ofView(view).addToSuperview(), right: self.setRight.ofView(view).addToSuperview(), width: self.setWidth.ofView(view).addToSuperview(), height: self.setHeight.ofView(view).addToSuperview())
     }
     
+    @discardableResult
     public func sizeOfParent() -> (width: LALayoutConstraint, height: LALayoutConstraint) {
         return (width: self.setWidth.addToSuperview(), height: self.setHeight.addToSuperview())
     }
     
+    @discardableResult
     public func sizeOfView(_ view: UIView) -> (width: LALayoutConstraint, height: LALayoutConstraint) {
         return (width: self.setWidth.ofView(view).addToSuperview(), height: self.setHeight.ofView(view).addToSuperview())
     }
     
+    @discardableResult
     public func centerInParent() -> (centerX: LALayoutConstraint, centerY: LALayoutConstraint) {
         return(centerX: self.setCenterX.addToSuperview(), centerY: self.setCenterY.addToSuperview())
     }
     
+    @discardableResult
     public func centerInView(_ view: UIView) -> (centerX: LALayoutConstraint, centerY: LALayoutConstraint) {
         return(centerX: self.setCenterX.ofView(view).addToSuperview(), centerY: self.setCenterY.ofView(view).addToSuperview())
     }
